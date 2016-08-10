@@ -27,7 +27,7 @@ RUN groupadd -g 1000 dey && useradd -u 1000 -g 1000 -ms /bin/bash dey
 
 # Install Digi Embedded Yocto
 ENV DEY_INSTALL_PATH="/usr/local/dey-2.0"
-RUN sudo install -o 1000 -g 1000 -d $DEY_INSTALL_PATH
+RUN install -o 1000 -g 1000 -d $DEY_INSTALL_PATH
 WORKDIR $DEY_INSTALL_PATH
 USER dey
 
