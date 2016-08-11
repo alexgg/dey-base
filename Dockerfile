@@ -13,8 +13,8 @@ CMD ["/sbin/my_init"]
 # Replace dash with bash
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-# Update Ubuntu and Install Yocto Proyect Quick Start dependencies
-RUN apt-get update && apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm
+# Update Ubuntu and Install Yocto Proyect Quick Start and DEY ependencies
+RUN apt-get update && apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm cpio
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
