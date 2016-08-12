@@ -31,6 +31,6 @@ RUN install -o 1000 -g 1000 -d $DEY_INSTALL_PATH
 WORKDIR $DEY_INSTALL_PATH
 USER dey
 
-RUN repo init -u https://github.com/digi-embedded/dey-manifest.git -b refs/tags/2.0-r2 && repo sync -j4 --no-repo-verify
+RUN repo init -u https://github.com/digi-embedded/dey-manifest.git -b refs/tags/2.0-r3 && repo sync -j4 --no-repo-verify
 
 RUN echo "echo Welcome to Digi Embedded Yocto base docker image!" >> /home/dey/.bashrc
