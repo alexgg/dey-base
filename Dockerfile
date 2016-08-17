@@ -19,6 +19,11 @@ RUN apt-get update && apt-get install -y gawk wget git-core diffstat unzip texin
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# Enable SSH server
+RUN rm -f /etc/service/sshd/down
+# Permanently enable insecure keys
+RUN /usr/sbin/enable_insecure_key
+
 # Install repo
 RUN curl -o /usr/local/bin/repo http://commondatastorage.googleapis.com/git-repo-downloads/repo && chmod a+x /usr/local/bin/repo
 
