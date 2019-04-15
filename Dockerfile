@@ -30,12 +30,14 @@ RUN curl -o /usr/local/bin/repo http://commondatastorage.googleapis.com/git-repo
 # User management
 RUN groupadd -g 1000 dey && useradd -u 1000 -g 1000 -ms /bin/bash dey
 
+ARG DEY_INSTALL_PATH="/usr/local/dey-2.2"
+ARG DEY_BRANCH="morty"
+
 # Install Digi Embedded Yocto
-ENV DEY_INSTALL_PATH="/usr/local/dey-2.2"
 RUN install -o 1000 -g 1000 -d $DEY_INSTALL_PATH
 WORKDIR $DEY_INSTALL_PATH
 USER dey
 
-RUN repo init -u https://github.com/digi-embedded/dey-manifest.git -b morty && repo sync -j4 --no-repo-verify
+RUN repo init -u https://github.com/digi-embedded/dey-manifest.git -b $DEY_BRANCH && repo sync -j4 --no-repo-verify
 
 RUN echo "echo Welcome to Digi Embedded Yocto base docker image!" >> /home/dey/.bashrc
