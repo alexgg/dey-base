@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:trusty
 
 MAINTAINER Alex Gonzalez <alex.gonzalez@digi.com>
 
@@ -25,8 +25,8 @@ RUN curl -o /usr/local/bin/repo http://commondatastorage.googleapis.com/git-repo
 RUN groupadd -g 1000 dey && useradd -u 1000 -g 1000 -ms /bin/bash dey
 
 # Install Digi Embedded Yocto
-ARG DEY_INSTALL_PATH="/usr/local/dey-2.4"
-ARG DEY_BRANCH="rocko"
+ARG DEY_INSTALL_PATH="/usr/local/dey-2.0"
+ARG DEY_BRANCH="jethro"
 
 RUN install -o 1000 -g 1000 -d $DEY_INSTALL_PATH
 WORKDIR $DEY_INSTALL_PATH
