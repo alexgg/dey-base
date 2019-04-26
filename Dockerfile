@@ -25,8 +25,8 @@ RUN curl -o /usr/local/bin/repo http://commondatastorage.googleapis.com/git-repo
 RUN groupadd -g 1000 dey && useradd -u 1000 -g 1000 -ms /bin/bash dey
 
 # Install Digi Embedded Yocto
-ARG DEY_INSTALL_PATH="/usr/local/dey-latest"
-ARG DEY_BRANCH="latest"
+ARG DEY_INSTALL_PATH="/usr/local/dey-2.6"
+ARG DEY_BRANCH="thud"
 
 RUN install -o 1000 -g 1000 -d $DEY_INSTALL_PATH
 WORKDIR $DEY_INSTALL_PATH
