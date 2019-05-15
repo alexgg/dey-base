@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:xenial
 
 MAINTAINER Alex Gonzalez <alex.gonzalez@digi.com>
 
